@@ -1,0 +1,18 @@
+html
+  body
+    form(name='loginForm', ng-submit='auth.login()', novalidate='')
+      .row(ng-hide='auth.isLoggedIn()')
+        .large-12.columns.right.inputColor
+          input(type='email', placeholder='email', ng-model='auth.user.email', required='')
+      |   
+      .row
+        .small-12.columns.right.inputColor
+          input#login-password(type='password', placeholder='Password', ng-model='auth.user.password', required='')
+      |   
+      .row
+        .large-12.large-centered.columns
+          button.button.success.expand(type='submit' ng.click="auth.login()") Login
+      |   
+      .row
+        .large-12.large-centered.columns(style='margin-bottom: 10px;')
+          button.button.expand(type='submit', value='Register', ng-click='auth.register()') Register

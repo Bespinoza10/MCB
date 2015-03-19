@@ -1,0 +1,121 @@
+doctype html
+html(lang='en-US', ng-app='tas')
+  head
+    meta(charset='utf-8')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |  
+    title My Title
+    |     
+    link(rel='stylesheet', href='bower_components/foundation/css/foundation.css')
+    // <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    link(rel='stylesheet', href='css/main.css')
+    |     
+    link(href='http://fonts.googleapis.com/css?family=Titillium+Web:200,300', rel='stylesheet', type='text/css')
+  |   
+  body
+    include nav
+      include js/auth/login
+    //- include auth/login
+    //if lt IE 9
+      script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+    //
+      <form class="navbar-form navbar-right" ng-submit="auth.login()" novalidate>
+      <div class="form-group">
+      <div class="loggedOut-container" ng-hide="auth.isLoggedIn()">
+      <ul class="nav nav-pills">
+      <li>
+      <input class="bottones form-control" type="email" placeholder="Email" ng-model="auth.user.email" required>
+      </li>
+      <li>
+      <input class="bottones form-control" type="password" placeholder="Password" ng-model="auth.user.password" required>
+      </li>
+      <li>
+      <input type="submit" value="Login" class=" bottones active btn btn-success">
+      </li>
+      <li>
+      <input type="submit" value="Register" class=" bottones active btn btn-success" ng-click="auth.register()">
+      </li>
+      </ul>
+      </div>
+      <div class="loggedIn-container" ng-show="auth.isLoggedIn()">
+      <ul class="nav nav-pills">
+      <a href="/#/reddthat/modal" class="bottones active btn btn-primary" data-toggle="modal" data-target="#modal-1">New Post</a>
+      </ul>
+      </div>
+      </div>
+      </form>
+    ul.example-orbit(data-orbit='')
+      li
+        img(src='images/enchiladas1.png', alt='slide 1')
+      li.active
+        img(src='images/spaghetti.png', alt='slide 2')
+      li
+        img(src='images/chile_rellenos.png', alt='slide 3')
+      li
+        img(src='images/lasagna.png', alt='slide 4')
+      |       
+      li
+        img(src='images/hamburger.png', alt='slide 5')
+    |     
+    .row
+      .large-12.columns
+        h1 Welcome To Cheff It!!!!
+        |         
+        p If you have not registered, please do so to start your own Online Recipe Book!    
+    .row
+      .large-12.columns
+        h3 What Can You Do With Cheff It?
+        p
+          | You can save all your recipes on to your own account. And it is easy to save your recipes with our clean and easy interface. Thats not all you can search for recipes and also type in the ingredients that you have and you will be able yo search recipes acording to your ingredients!
+    
+      
+        //- <div class="container" ng-controller="TasController as tas">
+        //- <h1>My Address Book</h1>
+        //- <div ng-show="user">
+        //- <button class="btn btn-primary"><a href="/#/" style="color: white;font-family: 'Titillium Web', sans-serif;">Home</a></button>
+        //- <button class="btn btn-success"><a href="/#/new" style="color: white; font-family: 'Titillium Web', sans-serif;">New Contact</a></button>
+        //- <button class="btn btn-warning"><a href="/#/logout" style="color: white; font-family: 'Titillium Web', sans-serif;" >Logout {{user.password.email}}</a></button>
+        //- </div>
+        //- <div ng-view></div>
+        //- </div>
+        //- <br>
+        //- <br>
+        //- <button class="btn btn-warning sortButton" ng-click="friendReverse=!friendReverse">Sort</button>
+        //- <br>
+
+  script(src='../bower_components/jquery/dist/jquery.min.js')
+    
+  script(src="../bower_components/angular/angular.min.js")
+        
+  script(src='../bower_components/foundation/js/foundation.js')
+
+  script(src='../bower_components/firebase/firebase.js')
+  |     
+  |     
+  script(src='../bower_components/angular-route/angular-route.min.js')
+  |     
+  //- script(src='js/main.module.js')
+  //- |     
+  //- script(src='js/main.config.js')
+  //- |     
+  //- script(src='js/main.constants.js')
+  //
+    // <script src="js/tas/tafactory.factory.js"></script>
+    // <script src="js/tas/edit.controller.js"></script>
+    // <script src="js/tas/show.controller.js"></script>
+    // <script src="js/tas/ta.controller.js"></script>
+  //- script(src='/js/auth/auth.config.js')
+  //- |     
+  //- script(src='js/auth/auth.controller.js')
+  //- |     
+  //- script(src='js/auth/auth.factory.js')
+  |     
+  //- script(src='js/auth/logout.controller.js')
+  |     
+  script(src='../bower_components/modernizr/modernizr.js')
+    
+  script.
+    $(document).foundation();

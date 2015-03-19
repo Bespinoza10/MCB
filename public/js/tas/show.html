@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6">
+    <dl class="dl-horizontal">
+      <dt>First Name</dt>
+      <dd>{{show.ta.firstName}}</dd>
+      <dt>Last Name</dt>
+      <dd>{{show.ta.lastName}}</dd>
+      <dt>Nick Name</dt>
+      <dd>{{show.ta.nickName}}</dd>
+      <dt>Job</dt>
+      <dd>{{tas.cohortOptions[show.ta.cohort]}}</dd>
+      <dt>Status</dt>
+      <dd>{{show.ta.current ? 'Employed' : 'Not Employed'}}</dd>
+    </dl>
+  </div>
+  <div class="col-md-6">
+	  <h4>Photo:</h4>
+		<img ng-src="{{show.ta.Photo}}" style="max-width: 400px; max-height: 400px;">
+  </div>
+<!--      src="http://i.imgur.com/Ycq1VLR.gif" style="width: 350px; height: 250px;" -->
+  </div>
+</div>
