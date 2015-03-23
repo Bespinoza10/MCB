@@ -1,7 +1,7 @@
 {
-  "name": "MCB",
+  "name": "AngularappB",
   "version": "1.0.0",
-  "homepage": "https://github.com/Bespinoza10/MCB",
+  "homepage": "https://github.com/Bespinoza10/AngularappB",
   "authors": [
     "Brandon Espinoza <espinozab100@gmail.com>"
   ],
@@ -14,9 +14,9 @@
     "tests"
   ],
   "dependencies": {
+    "angular": "~1.3.14",
     "bootstrap": "~3.3.2",
     "jquery": "~2.1.3",
-    "angular": "~1.3.14",
     "angular-route": "~1.3.14",
     "firebase": "~2.2.2",
     "foundation": "~5.5.1"
