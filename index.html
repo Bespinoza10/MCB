@@ -51,17 +51,14 @@
 				 <button ng-show="user" class="button button success" style="margin-top:30px;"><a href="#" data-reveal-id="myModal" style="color: white; font-family: 'Titillium Web', sans-serif;">New Recipe</a></button>
 				 <button ng-show="user" class="button button warning"><a href="/#/logout" style="color: white; font-family: 'Titillium Web', sans-serif;" >Logout {{user.password.email}}</a></button>
 				 
-<!--
-				 <div class="loggedIn-container" ng-show="auth.isLoggedIn()">
-	            	<a href="/#/reddthat/modal" class="bottones active btn btn-primary" data-toggle="modal" data-target="#modal-1">New Post</a>
-		          </div>
--->
 
       	</ul>
         </ul>
       </section>
     </nav>
-    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    
+  
+    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" ng-controller=" TasController as tas">
 		  <h2 id="modalTitle">New Recipe Form</h2>
 		  <p class="lead">Please Fill out the Form to Create your own Recipe!</p>		  
 			
@@ -104,8 +101,7 @@
 			  </div>
 			  <div class="row">
 			    <div class="large-12 columns">
-<!-- 				    <a href="#" class="button" >Default Button</a> -->
-				    <a type="submit" value="Save" class="button">Save</a>
+				    <a type="submit" value="Save" class="button" ng-click="tas.addOrEditTA()" href="index.html">Save</a>
 			    </div>
 			  </div>			
 			</form>
@@ -114,62 +110,15 @@
 		  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
     
-    <!--if lt IE 9script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
-    -->
-    <!--
-    <form class="navbar-form navbar-right" ng-submit="auth.login()" novalidate>
-    <div class="form-group">
-    <div class="loggedOut-container" ng-hide="auth.isLoggedIn()">
-    <ul class="nav nav-pills">
-    <li>
-    <input class="bottones form-control" type="email" placeholder="Email" ng-model="auth.user.email" required>
-    </li>
-    <li>
-    <input class="bottones form-control" type="password" placeholder="Password" ng-model="auth.user.password" required>
-    </li>
-    <li>
-    <input type="submit" value="Login" class=" bottones active btn btn-success">
-    </li>
-    <li>
-    <input type="submit" value="Register" class=" bottones active btn btn-success" ng-click="auth.register()">
-    </li>
-    </ul>
-    </div>
-    <div class="loggedIn-container" ng-show="auth.isLoggedIn()">
-    <ul class="nav nav-pills">
-    <a href="/#/reddthat/modal" class="bottones active btn btn-primary" data-toggle="modal" data-target="#modal-1">New Post</a>
-    </ul>
-    </div>
-    </div>
-    </form>
-    -->
     <ul data-orbit="" class="example-orbit">
       <li><img src="images/enchiladas1.png" alt="slide 1"></li>
       <li class="active"><img src="images/spaghetti.png" alt="slide 2"></li>
-<!--       <li><img src="images/chile_rellenos.png" alt="slide 3"></li> -->
       <li><img src="images/lasagna.png" alt="slide 4"></li>      
       <li><img src="images/hamburger.png" alt="slide 5"></li>
     </ul>    
     
     <div ng-view></div>
-<!--
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/main.module.js"></script>
-    <script src="js/main.config.js"></script>
-    <script src="js/main.constants.js"></script>
-    <script src="js/tas/tafactory.factory.js"></script>
-    <script src="js/tas/edit.controller.js"></script>    
-    <script src="js/tas/show.controller.js"></script>
-    <script src="js/tas/ta.controller.js"></script>
-    <script src="js/auth/auth.config.js"></script>
-    <script src="js/auth/auth.controller.js"></script>
-    <script src="js/auth/auth.factory.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
--->
      
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>

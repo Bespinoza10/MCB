@@ -2,7 +2,7 @@ angular
   .module('tas')
   .controller('AuthController', AuthController)
 
-function AuthController($rootScope, $scope, $location, authFactory, BASE_URL) {
+function AuthController($rootScope, $scope, $location, authFactory, BASE_URL, $http) {
   var vm = this;
 
   vm.user = {};
@@ -30,6 +30,12 @@ function AuthController($rootScope, $scope, $location, authFactory, BASE_URL) {
       } else {
         console.log('User created successfully', authData);
         vm.login();
+        delete vm.user['password'];
+       $http
+       		.put('https://mcb.firebaseio.com/users/' + authData.uid + '/profile.json', vm.user)
+       		.success(function(data){
+	       		vm.user = data;
+       		}); 
       }
     });
   };

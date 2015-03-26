@@ -1,6 +1,7 @@
 angular
   .module('tas')
-  .constant('BASE_URL', 'https://tangularlist.firebaseio.com')
+  .constant('BASE_URL', 'https://mcb.firebaseio.com/')
+/*
   .constant('COHORT_OPTIONS', [
     'Full Stack Developer',
     'Web Designer',
@@ -14,3 +15,4 @@ angular
     'Barber',
     'Hair Specialists'
   ]);
+*/

@@ -4,10 +4,11 @@ angular
   
   function taFactory($http, BASE_URL) {
     var tas = {};
+    fb = new Firebase('https://mcb.firebaseio.com/')
 
     tas.findOne = function (id, cb) {
       $http
-        .get(BASE_URL + '/tas/' + id + '.json')
+        .get(BASE_URL +  '/users/' + fb.getAuth().uid + '/recipes/' + id + '.json')
         .success(function (data) {
           cb(data);
         });
@@ -15,22 +16,22 @@ angular
 
     tas.findAll = function (cb) {
       $http
-        .get(BASE_URL + '/tas.json')
-        .success(function (data) {
+        .get(BASE_URL +  '/users/' + fb.getAuth().uid + '/recipes.json')
+        .success(function (data){
           cb(data);
         });
     };
     
     tas.create = function (data, cb) {
 	    $http
-        .post(BASE_URL + '/tas.json', data)
+        .post(BASE_URL +  '/users/' + fb.getAuth().uid + '/recipes.json', data)
         .success(function (res) {
           cb(res);
         });
     };
     
     tas.delete = function(id, cb){
-	    var url = BASE_URL + '/tas/' + id + '.json';
+	    var url = BASE_URL +  '/users/' + fb.getAuth().uid + '/recipes/' + id + '.json';
       
        $http
         .delete(url)
@@ -40,7 +41,7 @@ angular
     };
     
     tas.update = function(id, data, cb){
-	    var url = BASE_URL + '/tas/' + id + '.json';
+	    var url = BASE_URL +  '/users/' + fb.getAuth().uid + '/recipes/' + id + '.json';
       
       $http
         .put(url, data)

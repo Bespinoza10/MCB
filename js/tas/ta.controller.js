@@ -2,10 +2,10 @@ angular
   .module('tas')
 	.controller('TasController', TasController); 
 	
-	function TasController($location, taFactory, COHORT_OPTIONS) {
+	function TasController($location, taFactory, /* COHORT_OPTIONS */ $http) {
 	  var vm = this;
 	
-	  vm.cohortOptions = COHORT_OPTIONS;
+/* 	  vm.cohortOptions = COHORT_OPTIONS */
 	
 	  taFactory.findAll(function (tas) {
 	    vm.data = tas;
@@ -17,10 +17,9 @@ angular
 	
 	    taFactory.create(vm.newTA, function (res) {
 	      vm.data[res.name] = vm.newTA;
-	      $location.path('/tas');
-	    });
-	  };
-	
+	      $location.path('/'); 
+			});
+		};
 	
 	  vm.removeTA = function (id) {
 	    taFactory.delete(id, function(){
@@ -31,4 +30,5 @@ angular
 	  vm.updateTA = function (id) {
 	    taFactory.update(id, vm.data[id]);
 	  };
-	}
+ 	}		
+	
