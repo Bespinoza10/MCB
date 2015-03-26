@@ -57,8 +57,8 @@
       </section>
     </nav>
     
-  
-    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" ng-controller=" TasController as tas">
+    
+		 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" ng-controller=" TasController as tas">
 		  <h2 id="modalTitle">New Recipe Form</h2>
 		  <p class="lead">Please Fill out the Form to Create your own Recipe!</p>		  
 			
@@ -67,41 +67,41 @@
 			  <div class="row" ng-class="{'has-error': tas.newTAForm.$dirty}">
 			    <div class="large-12 columns">
 			      <label>Name of the Recipe:
-			        <input type="text" placeholder="large-10.columns" ng-model="tas.newTA.firstName" required />
+			        <input type="text" placeholder="Enter the name of your recipe" ng-model="tas.newTA.firstName" required />
 			      </label>
 			    </div>
 			  </div>
 			  <div class="row" ng-class="{'has-error': tas.newTAForm.$dirty}">
 			    <div class="large-12 columns">
 			      <label>Description of your Recipe:
-			        <input type="text" placeholder="large-10.columns" ng-model="tas.newTA.lastName" required />
+			        <input type="text" placeholder="type in your description" ng-model="tas.newTA.lastName" required />
 			      </label>
 			    </div>
 			  </div>
 			  <div class="row" ng-class="{'has-error': tas.newTAForm.$dirty}">
 			    <div class="large-12 columns">
 			      <label>Ingredients:
-			        <input type="text" placeholder="large-10.columns" ng-model="tas.newTA.nickName" required />
+			        <input type="text" placeholder="type in your ingredients" ng-model="tas.newTA.nickName" required />
 			      </label>
 			    </div>
 			  </div>
 			  <div class="row" ng-class="{'has-error': tas.newTAForm.$dirty}">
 			    <div class="large-12 columns">
 			      <label>Instructions:
-			        <input type="text" placeholder="large-10.columns" ng-model="tas.newTA.instructions" required />
+			        <input type="text" placeholder="type in your instructions" ng-model="tas.newTA.instructions" required />
 			      </label>
 			    </div>
 			  </div>
 			  <div class="row" ng-class="{'has-error': tas.newTAForm.$dirty}">
 			    <div class="large-12 columns">
 			      <label>Photo:
-			        <input type="text" placeholder="large-10.columns" ng-model="tas.newTA.photo" required />
+			        <input type="url" placeholder="photo url" ng-model="tas.newTA.photo" required />
 			      </label>
 			    </div>
 			  </div>
 			  <div class="row">
 			    <div class="large-12 columns">
-				    <a type="submit" value="Save" class="button" ng-click="tas.addOrEditTA()" href="index.html">Save</a>
+				    <a type="submit" value="Save" class="button" ng-click="tas.addOrEditTA()" href="/">Save</a>
 			    </div>
 			  </div>			
 			</form>

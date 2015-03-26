@@ -9,6 +9,7 @@ angular
 	
 	  taFactory.findAll(function (tas) {
 	    vm.data = tas;
+			$apply();
 	  });
 	
 	  vm.addOrEditTA = function () {

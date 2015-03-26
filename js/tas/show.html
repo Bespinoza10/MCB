@@ -23,5 +23,15 @@
   </div>
 </div>
 -->
-<h1>show in detail of each recipe</h1>
+<div class="row">
+	<div class="large-6 columns">
+		<h1>{{show.ta.firstName}}</h1>
+		<h4>{{show.ta.lastName}}</h4>
+		<h4>{{show.ta.nickName | uppercase}}</h4>
+		<h4>{{show.ta.instructions}}</h4>
+	</div>
+	<div class="large-6 columns">
+		<img ng-src="{{show.ta.photo}}">
+	</div>
+</div>
 
